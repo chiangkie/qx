@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>端API</title>
+       <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/auislide.css" />
+	  <link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+  
+</head>
+<body>
+  	<div class="v-list-wrap" id="liveList" style="background:#fff;    padding: 0px;">
+  		<div id="slidebox" class="aui-slide-wrap">
+                <!--顶部横幅未加载完成时的提示-->
+                  <img id="bpic" src="../image/TV.png">
+				  
+                <!--顶部横幅未加载完成时的提示-->
+			    </div>
+		
+			<ul class="clearfix" id="dianshiju">
+			
+		<!--		<li style='margin-bottom:2px;height:180px;width:49.4%;margin-right:0%;' onClick="openWin('dianying_win')">
+				
+				<div class="video-mask-box">
+				<img src="../image/01.png" alt="' + item.title + '" style="width:100%;max-height: 180px;height: 180px;min-height: 180px;">
+				<span class="pay" style="font-size:25px; position: absolute;right:70px;bottom:65px;padding: 2px 6px;color: #fff;border-radius: 2px;"></span>
+				</div>
+				
+				</li>
+			<li style='margin-bottom:2px;height:180px;width:50%;margin-right:0%;margin-left:2px;' onClick="openWin('juji_win')">
+				     
+				<div class="video-mask-box">
+				<img src="../image/02.png" alt="' + item.title + '" style="width:100%;max-height: 180px;height: 180px;min-height: 180px;">
+				<span class="pay" style="font-size:25px; position: absolute;right:70px;bottom:65px;padding: 2px 6px;color: #fff;border-radius: 2px;"></span>
+				</div>
+				
+				</li>
+				
+				<li style='margin-bottom:2px;height:180px;width:49.4%;margin-right:0%;' onClick="openWin('zongyi_win')">
+				
+				<div class="video-mask-box">
+				<img src="../image/03.png" alt="' + item.title + '" style="width:100%;max-height: 180px;height: 180px;min-height: 180px;">
+				<span class="pay" style="font-size:25px; position: absolute;right:70px;bottom:65px;padding: 2px 6px;color: #fff;border-radius: 2px;"></span>
+				</div>
+				
+				</li>
+			<li style='margin-bottom:2px;height:180px;width:50%;margin-right:0%;margin-left:2px;' onClick="openWin('dongman_win')">
+				     
+				<div class="video-mask-box">
+				<img src="../image/04.png" alt="' + item.title + '" style="width:100%;max-height: 180px;height: 180px;min-height: 180px;">
+				<span class="pay" style="font-size:25px; position: absolute;right:70px;bottom:65px;padding: 2px 6px;color: #fff;border-radius: 2px;"></span>
+				</div>
+				
+				</li>
+			-->
+			<li style='margin-bottom:2px;height:180px;width:49.4%;margin-right:0%;'  onClick="girlxiezhenList()">				
+				<div class="video-mask-box">
+				<img src="../image/05.png" alt="' + item.title + '" style="width:100%;max-height: 180px;height: 180px;min-height: 180px;">
+				<span class="pay" style="font-size:25px; position: absolute;right:70px;bottom:65px;padding: 2px 6px;color: #fff;border-radius: 2px;"></span>
+				</div>				
+				</li>  
+			<li style='margin-bottom:2px;height:180px;width:50%;margin-right:0%;margin-left:2px;' onClick="vList()">				     
+				<div class="video-mask-box">
+				<img src="../image/06.png" alt="' + item.title + '" style="width:100%;max-height: 180px;height: 180px;min-height: 180px;">
+				<span class="pay" style="font-size:25px; position: absolute;right:70px;bottom:65px;padding: 2px 6px;color: #fff;border-radius: 2px;"></span>
+				</div>			
+			</li>
+			<li style='margin-bottom:2px;height:180px;width:50%;margin-right:0%;margin-left:2px;' onClick="openWin('tv_list_win')">				     
+				<div class="video-mask-box">
+				<img src="../image/07.png" alt="' + item.title + '" style="width:100%;max-height: 180px;height: 180px;min-height: 180px;">
+				<span class="pay" style="font-size:25px; position: absolute;right:70px;bottom:65px;padding: 2px 6px;color: #fff;border-radius: 2px;"></span>
+				</div>
+				
+			</li>
+			</ul>     
+			</div>
+	
+</body>
+
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript" src="../script/doT.js"></script>
+<script type="text/javascript" src="../script/auipullrefresh.js"></script>
+<script type="text/javascript" src="../script/auislide.js"></script>
+<script type="text/javascript" src="../script/auilazyload.js" ></script>
+  <script type="text/javascript">
+  var api_url = localStorage.getItem('api_url');
+      apiready = function(){
+		
+      
+		
+		
+	}
+	function openWin(name){
+	  
+	   
+	  
+		api.openWin({
+			  name: ''+name+'',
+			  url: ''+name+'.html',
+			 
+		  });
+	}	
+		
+	function vList(){
+  var delay = 0;
+  if(api.systemType != 'ios'){
+      delay = 300;
+  }
+  api.openWin({
+      name: 'v_list_win',
+      url: 'v_list_win.html',
+      bounces:false,
+      delay: delay,
+      slidBackEnabled:true,
+      vScrollBarEnabled:false,
+  });
+}	
+     
+
+function girlxiezhenList(){
+	var delay = 0;
+	api.openWin({
+			name: 'v_mn_win',
+			url: 'v_mn_win.html',
+			bounces:false,
+			delay: delay,
+			slidBackEnabled:true,
+			vScrollBarEnabled:false,
+	});
+}
+
+  </script>
+  </html>

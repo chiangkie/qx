@@ -1,0 +1,409 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+    <style>
+         .right
+        {
+            float: right;
+            height: 46px;
+            vertical-align: middle;
+        }
+        .picimg{height: 50px;width: 50px;border-radius: 50px;overflow: hidden;}
+        .picname{overflow:auto;padding:5px 10px;line-height: 50px;margin-top: 10px;    padding-left: 0.75rem;color: #212121;background: #fff;}
+        .auicontent-padded{background: #fff;margin:0;margin-top: 30px;line-height: 40px;}
+        .auicontent-padded .aui-btn-tuichu{background: none;color: #ff5e3e;line-height: 2.7rem;     height: 2.7rem;}
+        .topshowti{margin: 1rem;text-align: center;}
+    </style>
+</head>
+<body style="background: #f7f7f7;">
+ <section class="aui-content">
+    <div class="picname">
+       <span>头像</span>
+       <div class="right">
+            <div class="picimg">
+                <img src="../image/wode.png" alt="">
+            </div>
+       </div>
+    </div>
+      <ul class="aui-list aui-list-in">
+         <!-- <li class="aui-list-item">
+               <div class="aui-list-item-label-icon">
+                  <i class="aui-iconfont aui-icon-cert aui-text-warning"></i>
+              </div>
+              <div class="aui-list-item-inner aui-list-item-arrow">
+                  <div id='bang_qq' class="aui-list-item-title">QQ账号</div>
+                  <div id="tishi_qq" class="aui-list-item-right">立即绑定</div>
+              </div>
+          </li> 
+          <li class="aui-list-item" tapmode onclick="WX_login()">
+            <!--   <div class="aui-list-item-label-icon">
+                  <i class="aui-iconfont aui-icon-cert aui-text-warning"></i>
+              </div> -->
+     <!--          <div class="aui-list-item-inner aui-list-item-arrow">
+                  <div id='bang_wx' class="aui-list-item-title">微信账号</div>
+                  <div id="tishi_wx" class="aui-list-item-right">立即绑定</div>
+              </div>
+          </li>
+          <li class="aui-list-item" tapmode onclick="bindPhone()">
+            <!--   <div class="aui-list-item-label-icon">
+                  <i class="aui-iconfont aui-icon-cert aui-text-warning"></i>
+              </div> -->
+      <!--         <div class="aui-list-item-inner aui-list-item-arrow">
+                  <div id='bang_phone' class="aui-list-item-title">手机号</div>
+                  <div id="tishi_phone" class="aui-list-item-right">立即绑定</div>
+              </div>
+          </li>-->
+     <!--    <li class="aui-list-item" tapmode onclick="WX_login()">
+               <div class="aui-list-item-label-icon">
+                  <i class="aui-iconfont aui-icon-cert aui-text-warning"></i>
+              </div> 
+              <div class="aui-list-item-inner aui-list-item-arrow">
+                  <div id='bang_wx' class="aui-list-item-title">微信账号</div>
+                  <div id="tishi_wx" class="aui-list-item-right">立即绑定</div>
+              </div>
+          </li>-->
+          <li class="aui-list-item">
+						<div class="aui-list-item-inner">
+								<div class="aui-list-item-title">地址</div>
+								<label id="nictxt" style="display:none;width: 165px;"></label>
+								<input type="text" id="nickname"  style=" width: 165px;border: 1px solid #ccc;margin-right:15px;height: 35px;" placeholder=" 填写一个地址吧!" />
+								<input type="button" id="btnnc" class="button white" tapmode onclick="niccz()" value="保 存"/>
+								<div id="vsionnc" class="aui-list-item-right"></div>
+						</div>
+				</li>
+				<li class="aui-list-item">
+						<div class="aui-list-item-inner">
+								<div class="aui-list-item-title">支付宝</div>
+								<label id="zfbtxt" style="display:none;width: 165px;"></label>
+								<input type="text" id="zfb"  style=" width: 165px;border: 1px solid #ccc;margin-right:15px;height: 35px;" placeholder=" 填写你的支付宝" />
+								<input type="button" id="btnzfb" class="button white" tapmode onclick="zfbcz()" value="保 存"/>
+								<div id="vsionzfb" class="aui-list-item-right"></div>
+						</div>
+				</li>
+      <!--    <li class="aui-list-item" tapmode onclick="bindPhone()">
+              <!--  <div class="aui-list-item-label-icon">
+                 <i class="aui-iconfont aui-icon-cert aui-text-warning"></i>
+              </div> -->
+           <!--     <div class="aui-list-item-inner aui-list-item-arrow">
+                  <div id='bang_phone' class="aui-list-item-title">手机号</div>
+                  <div id="tishi_phone" class="aui-list-item-right">立即绑定</div>
+              </div>
+          </li>
+          <li class="aui-list-item" onClick="openWin('.html/back_pwd')">
+              <!-- <div class="aui-list-item-label-icon">
+                  <i class="aui-iconfont aui-icon-cert aui-text-warning"></i>
+              </div> -->
+            <!--  <div class="aui-list-item-inner aui-list-item-arrow">
+                  <div class="aui-list-item-title">修改密码</div>
+                  <div class="aui-list-item-right">立即修改</div>
+              </div>
+          </li>-->
+      </ul>
+      <div class="topshowti">
+           <span>提示：支付宝用于佣金提现</span>
+      </div>
+      <div id="otbtn" class="aui-content-padded auicontent-padded" tapmode onclick="exitLogin()">
+          <div class="aui-btn-tuichu aui-btn-block">退出登录</div>
+      </div>
+
+
+  </section>
+</body>
+<script type="text/javascript" src="../script/api.js" ></script>
+<script type="text/javascript">
+  var api_url = localStorage.getItem('api_url');
+
+  apiready = function(){
+    qq = api.require('QQPlus');
+    wx = api.require('wx');
+    var user_name = localStorage.getItem('user_name');
+    var bang_wx = $api.byId('bang_wx');
+    var tishi_wx = $api.byId('tishi_wx');
+    var tishi_phone = $api.byId('tishi_phone');
+    var wx_nickname = localStorage.getItem('wx_nickname');
+    if(wx_nickname != '' && wx_nickname != null){
+      bang_wx.innerHTML = '微信账号：' + wx_nickname;
+      tishi_wx.innerHTML = '';
+    }
+    var bang_phone = $api.byId('bang_phone');
+    if(user_name != '' && user_name != null){
+      var tel = "" + user_name;
+      tel = tel.substr(0,3) + "****" + tel.substr(7)
+      bang_phone.innerHTML = '手机号（' + tel + ')';
+      tishi_phone.innerHTML = '';
+    }
+    api.parseTapmode();
+  }
+
+  function openWin(name){
+        var delay = 0;
+        if(api.systemType != 'ios'){
+            delay = 300;
+        }
+        api.openWin({
+            name: ''+name+'',
+            url: ''+name+'.html',
+            bounces:false,
+            delay: delay,
+            slidBackEnabled:true,
+            vScrollBarEnabled:false
+        });
+    }
+
+    //微信调用登陆
+		function WX_login() {
+			var user_id = localStorage.getItem('user_id');
+			var wx_nickname = localStorage.getItem('wx_nickname');
+			if(user_id == ''){
+				api.toast({
+					msg: '请先登录',
+					duration: 5000
+				});
+				return;
+			}
+			if(wx_nickname != '' && wx_nickname != null){
+				api.toast({
+					msg: '已绑定',
+					duration: 5000
+				});
+				return;
+			}
+			wx.auth(function(ret, err) {
+				if (ret.status) {
+					//alert(JSON.stringify(ret));
+					WX_auth(ret.code)
+				} else {
+					if (err.code == 1) {
+						alert('微信授权失败！请稍后重试！');
+					}
+				}
+			});
+		}
+
+		function WX_auth(code) {
+			var auth_code = code;
+			wx.getToken({
+				apiKey: '',
+				apiSecret: '',
+				code: auth_code
+			}, function(ret, err) {
+				if (ret.status) {
+					//alert(JSON.stringify(ret));
+					Other_type = '微信';
+					localStorage.setItem('Other_accessToken', ret.accessToken); // openid ：用户openid
+					var openId = ret.openId;
+					var accessToken = ret.accessToken;
+					WX_getUserInfo(openId, accessToken);
+				} else {
+					alert(err.code);
+				}
+			});
+		}
+		//获取微信信息
+		function WX_getUserInfo(Other_openid, Other_accessToken) {
+			//布尔型；true||false
+			//openid: '',        //字符串类型；普通用户的标识，对当前开发者帐号唯一
+			//nickname: '',      //字符串类型；普通用户昵称
+			//sex: 1,            //数字类型；普通用户性别，1为男性，2为女性
+			//headimgurl: '',    //字符串类型；用户头像，最后一个数值代表正方形头像大小（有0、46、64、96、132数值可选，0代表640*640正方形头像），用户没有头像时该项为空
+			//privilege: [],     //数组类型；用户特权信息，如微信沃卡用户为（chinaunicom）
+			//unionid: ''        //字符串类型；用户统一标识。针对一个微信开放平台帐号下的应用，同一用户的unionid是唯一的。
+			var accessToken = Other_accessToken;
+			var openId = Other_openid;
+			wx.getUserInfo({
+				accessToken: accessToken,
+				openId: openId
+			}, function(ret, err) {
+				if (ret.status) {
+					//alert(JSON.stringify(ret));
+					localStorage.setItem('Other_name', ret.nickname); // nickname  ：用户昵称
+					localStorage.setItem('Other_img', ret.headimgurl); // figureurl_qq_2   ：用户大头像（100）地址
+					localStorage.setItem('Other_openid', openId); // openid ：用户openid
+					Bind_Wx();
+				} else {
+					alert(err.code);
+				}
+			});
+		}
+
+		function Bind_Wx() {
+			var wx_openid = localStorage.getItem('Other_openid');
+			var wx_nickname = localStorage.getItem('Other_name');
+			var wx_headimgurl = localStorage.getItem('Other_img');
+			var user_id = localStorage.getItem('user_id');
+			api.ajax({
+				url: 'http://gd3.treege.cn/login/login/bind.html',
+				method: 'get',
+				data: {
+					values: {
+						uid: user_id,
+						wx_openid: wx_openid,
+						wx_nickname: wx_nickname,
+						wx_headimgurl: wx_headimgurl
+					}
+				}
+			}, function(ret, err) {
+				if (ret) {
+					if (ret.code == 1) {
+						api.hideProgress();
+						var wx_nickname = localStorage.getItem('Other_name');
+						localStorage.setItem('wx_nickname',wx_nickname);
+						// var wx_nickname = localStorage.getItem('wx_nickname');
+						if(wx_nickname != '' && wx_nickname != null){
+							bang_wx.innerHTML = '微信账号：' + wx_nickname;
+						}
+					}else{
+						api.hideProgress();
+						api.alert({
+								title: '错误~',
+								msg: ret.msg,
+						});
+					}
+
+				} else {
+					api.hideProgress();
+					api.alert({
+						title: '糟糕~',
+						msg: '网络错误！',
+					});
+				}
+			});
+		}
+
+    function bindPhone()
+    {
+      var user_name = localStorage.getItem('user_name');
+      if(user_name != '' && user_name != null){
+				api.toast({
+					msg: '已绑定',
+					duration: 5000
+				});
+				return;
+			}
+      openWin('bind_frm');
+    }
+
+
+
+    ////////////退出登录 方法  exitLogin   s   ////////////
+		function exitLogin() {
+			api.sendEvent({
+				name: 'newLoingdata',
+				extra: {}
+			});
+			localStorage.setItem('user_id', '');
+			localStorage.setItem('user_name', '');
+			localStorage.setItem('uuid','')
+			localStorage.setItem('user_time', '');
+			localStorage.setItem('Other_img', '');
+			localStorage.setItem('Other_name', '');
+			api.toast({
+				msg: ' 已安全退出',
+				duration: 2000
+			});
+      api.closeWin({
+      });
+
+		}
+		////////////退出登录 方法  exitLogin   E   ////////////
+		////////////支付宝地址设置  exitLogin   F   ////////////
+  var api_url = localStorage.getItem('api_url');
+	var smsVerify = null;
+    apiready = function(){ 
+			$api.byId('nickname').value=localStorage.getItem('dizhi');
+			$api.byId('zfb').value=localStorage.getItem('zhi');
+  }
+  
+	
+	function niccz(){
+		
+		var btnncxg = $api.val($api.byId('btnnc'));
+		var btnnc = $api.byId('btnnc');
+		 
+		var nicknamex = $api.val($api.byId('nickname'));
+	 if(nicknamex == ''){
+	 	api.alert({
+	 			title: '亲爱的!~',
+	 			msg: '昵称不能为空哦',
+	 	});
+	 	return;
+	 }
+	 
+	 api.ajax({
+	 		url: api_url+'/App/Index/dizhi.html',
+	 		method: 'get',
+	 		data: {
+	 				values: {
+	 						uid: localStorage.getItem('user_id'),
+							nickname: nicknamex
+	 				}
+	 		}
+	 },function(ret, err){
+	// alert(ret)
+	 		if (ret) {
+				if (ret.code == 1) {
+	 					 localStorage.setItem('dizhi',ret.msg['dizhi']);
+						 //alert(ret.msg['dizhi'])
+	 				alert('修改成功');
+
+	 	}else if (ret.code == 0) {
+	 			  api.hideProgress();
+	 				alert('修改失败');
+	 		    }
+	 	else {
+	 			api.hideProgress();
+	 			alert('网络错误！11');
+	 		  }
+			 }
+		});
+	}
+
+
+function zfbcz(){
+		var btnzfbxg = $api.val($api.byId('btnzfb'));
+		var btnzfb = $api.byId('btnzfb');
+		
+		var zfbx = $api.val($api.byId('zfb'));
+		if(zfbx == ''){
+		api.alert({
+				title: '亲爱的!~',
+				msg: '昵称不能为空哦',
+		});
+		return;
+		}
+		api.ajax({
+			url: api_url+'/App/Index/zhifubao.html',
+			method: 'get',
+			data: {
+					values: {
+							uid: localStorage.getItem('user_id'),
+							zhi: zfbx
+					}
+			}  
+		},function(ret, err){
+			if (ret) {
+				if (ret.code == 1) {
+				localStorage.setItem('zhi',ret.msg['zhi']);
+					alert('修改成功');
+
+		}else if (ret.code == 0) {
+					api.hideProgress();
+					alert('修改失败');
+					}
+		else {
+				api.hideProgress();
+				alert('网络错误！11');
+				}
+				}
+		});
+	}
+////////////支付宝地址设置  exitLogin   F   ////////////
+</script>
+</html>

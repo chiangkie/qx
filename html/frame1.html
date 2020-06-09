@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>frmae0</title>
+		  <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/auislide.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style2.css"/>
+		<link rel="stylesheet" href="../css/zhibo.css">
+	<script src="http://www.treege.cn/html/hongbao/alipay.js"></script>
+    <style>
+        .empty{ text-align: center; padding: 120px 0; }
+    </style>
+</head>
+  <div id="aui-slide">
+    <div id="slidebox" class="aui-slide-wrap" style="margin: 10px;border-radius:0.5rem;box-shadow:0.1rem 0.1rem 0.4rem rgba(99, 99, 99, 0.3);">
+
+
+                <!--顶部横幅未加载完成时的提示-->
+                  <img id="bpic" src="../image/default_picture/default_banner.png"  onClick="openWin('open_vip_win')">
+                <!--顶部横幅未加载完成时的提示-->
+
+
+    </div>
+    <div class="aui-slide-page-wrap"><!--分页容器--></div>
+  </div>
+    <div class="list-title">
+        <div class="list-title-l">
+            <span style="color:#444;font-size: 0.6rem"><i class="iconfont icon-zuirehotchunse" style="color:#ff7600;font-size: 0.8rem"></i>热门推荐</span>
+        </div>
+        <div class="list-title-r" id="wzbox_top">
+
+    </div>
+
+      </div>
+  </section>
+</body>
+<script type="text/x-dot-template" id="bannertpl">
+  {{~ it.data : value : index }}
+    <div class="aui-slide-node bg-dark" tapmode onclick="toBanner('{{= value. linkurl }}')">
+        <img src="http://www.treege.cn/{{= value. picurl }}" />
+    </div>
+  {{~}}
+</script>
+
+
+
+	                    <div class="tab-panel">
+	                        <div class="tab-panel-item tab-active">
+	                            <div class="tab-item">
+																	<a onClick="girlxiezhenList()" class="aui-flex b-line">
+																			<div class="aui-flex-iphone">
+																					<img src="../image/app/meinvxiezhen.png" alt="">
+																			</div>
+																			<div class="aui-flex-box">
+																				<p>
+																						<em class="aui-group-three"> 明星电影</em>
+																				</p>
+																					<h3>全明星电影直播间</h3>
+																					<p>
+																							<em class="aui-group-one">24小时轮播</em> <em class="aui-group-two">直播视频</em>
+																					</p>
+
+																			</div>
+																			<div class="aui-flex-support">去观看</div>
+																	</a>
+
+
+	                                <a  onClick="vList()" class="aui-flex b-line">
+	                                    <div class="aui-flex-iphone">
+	                                        <img src="../image/app/dianying.png" alt="">
+	                                    </div>
+	                                    <div class="aui-flex-box">
+																				<p>
+																						<em class="aui-group-three"> 热门电影</em>
+																				</p>
+	                                        <h3>当下最火热大片推荐</h3>
+	                                        <p>
+	                                            <em class="aui-group-one">不定时更新</em> <em class="aui-group-two">经典热门大片</em>
+	                                        </p>
+
+	                                    </div>
+	                                    <div class="aui-flex-support">去观看</div>
+	                                </a>
+
+
+
+																	<a  onClick="openWin('tv_list_win')" class="aui-flex b-line">
+	                                    <div class="aui-flex-iphone">
+	                                        <img src="../image/app/tv.png" alt="">
+	                                    </div>
+	                                    <div class="aui-flex-box">
+																				<p>
+																						<em class="aui-group-three"> 电视直播</em>
+																				</p>
+	                                        <h3>在线收看高清CCTV、全国卫视</h3>
+	                                        <p>
+	                                            <em class="aui-group-one">实时更新</em> <em class="aui-group-two">电视TV</em>
+	                                        </p>
+
+	                                    </div>
+	                                    <div class="aui-flex-support">去观看</div>
+	                                </a>
+																	
+<a onClick="douyinList()" class="aui-flex b-line">
+																			<div class="aui-flex-iphone">
+																					<img src="../image/douyin.png" alt="">
+																			</div>
+																			<div class="aui-flex-box">
+																				<p>
+																						<em class="aui-group-three">在线抖音</em>
+																				</p>
+																					<h3>抖音快手火山美拍短视频</h3>
+																					<p>
+																							<em class="aui-group-one">实时更新</em> <em class="aui-group-two">搞笑网红</em>
+																					</p>
+
+																			</div>
+																			<div class="aui-flex-support">去观看</div>																	
+                                                                        </a>
+                                                                        
+																<!--	<a  onClick="gameList()" class="aui-flex b-line">
+																			<div class="aui-flex-iphone">
+	                                        <img src="../image/app/game.png" alt="">
+																			</div>
+																			<div class="aui-flex-box">
+																				<p>
+																						<em class="aui-group-three"> 游戏直播</em>
+																				</p>
+																					<h3>各类游戏在线直播 </h3>
+																					<p>
+																							<em class="aui-group-one">实时更新</em> <em class="aui-group-two">知名主播</em>
+																					</p>
+
+																			</div>
+																			<div class="aui-flex-support">去观看</div>
+																	</a>-->
+
+	                            </div>
+	                        </div>
+
+
+	                    </div>
+	                </div>
+
+</body>
+<script type="text/javascript">
+
+</script>
+
+
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/doT.js"></script>
+<script type="text/javascript" src="../script/auipullrefresh.js"></script>
+<script type="text/javascript" src="../script/auislide.js"></script>
+<script type="text/javascript" src="../script/auilazyload.js" ></script>
+<script type="text/javascript">
+  var api_url = localStorage.getItem('api_url');
+      apiready = function(){
+		
+      
+		
+		
+	}
+	function openWin(name){
+	  
+	   
+	  
+		api.openWin({
+			  name: ''+name+'',
+			  url: ''+name+'.html',
+			 
+		  });
+	}	
+		
+	function vList(){
+  var delay = 0;
+  if(api.systemType != 'ios'){
+      delay = 300;
+  }
+  api.openWin({
+      name: 'v_list_win',
+      url: 'v_list_win.html',
+      bounces:false,
+      delay: delay,
+      slidBackEnabled:true,
+      vScrollBarEnabled:false,
+  });
+}	
+     
+
+function girlxiezhenList(){
+	var delay = 0;
+	api.openWin({
+			name: 'v_mn_win',
+			url: 'v_mn_win.html',
+			bounces:false,
+			delay: delay,
+			slidBackEnabled:true,
+			vScrollBarEnabled:false,
+	});
+}
+
+
+function douyinList(){
+	var delay = 0;
+	api.openWin({
+			name: 'douyin_win',
+			url: 'douyin_win.html',
+			bounces:false,
+			delay: delay,
+			slidBackEnabled:true,
+			vScrollBarEnabled:false,
+
+	});
+}
+
+
+
+
+
+//////////////////////    幻灯轮播图获取  方法  banNer  S  //////////////////////
+  function banNer(){
+    var slide = new auiSlide({
+        container:document.getElementById("aui-slide"),
+        // "width":300,
+        "height":150,
+        "speed":300,
+        "pageShow":true,
+        "autoPlay": 5000,
+        "pageStyle":'dot',
+        "loop":true,
+        'dotPosition':'center',
+    });
+  }
+
+  new auiLazyload({
+      errorImage:'../image/error-img.jpg'
+  });
+
+
+
+
+////////////手动开始下拉刷新的加载状态 方法  fnRefreshHeaderLoading   S   ////////////
+    function fnRefreshHeaderLoading() {
+        api.refreshHeaderLoading();
+    };
+////////////手动开始下拉刷新的加载状态 方法  fnRefreshHeaderLoading   E   ////////////
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+</html>
